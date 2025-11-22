@@ -1,0 +1,28 @@
+{
+  "name": "design-system",
+  "version": "1.0.0",
+  "description": "Shared Design System for Micro-Frontend Applications",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@babel/core": "^7.22.0",
+    "@babel/preset-react": "^7.22.0",
+    "rollup": "^3.29.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
