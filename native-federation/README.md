@@ -120,7 +120,7 @@ native-federation/
 - Shared component library
 - Ensures UI consistency across all modules
 - Contains reusable components: Button, Card, Header, Container
-- Each module imports and uses these components
+- **Note**: In this demo, components are duplicated in each module for simplicity. In production, modules would import from the design-system package or share via Module Federation.
 
 ### 4. **Module Federation Configuration**
 

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
-// Simulating design-system components
+// NOTE: For simplicity, design-system components are duplicated here.
+// In production, these would be imported from the design-system package:
+// import { Button, Card, Container, Header } from 'design-system';
+// or shared via Module Federation. This duplication is intentional for this demo
+// to avoid additional build complexity and keep each module self-contained.
 const Button = ({ children, onClick, variant = 'primary' }) => {
   const baseStyles = {
     padding: '10px 20px',
