@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-This guide will help you get the native-federation micro-frontend application up and running in minutes.
+This guide will help you get the module-federation micro-frontend application up and running in minutes.
 
 ## Prerequisites
 
@@ -12,10 +12,10 @@ This guide will help you get the native-federation micro-frontend application up
 
 ### 1. Install Dependencies
 
-Navigate to the `native-federation` directory and install dependencies for all modules:
+Navigate to the `module-federation` directory and install dependencies for all modules:
 
 ```bash
-cd native-federation
+cd module-federation
 
 # Install design-system dependencies
 cd design-system && npm install && cd ..
@@ -162,7 +162,7 @@ npm install
 To build all modules for production:
 
 ```bash
-# From the native-federation directory
+# From the module-federation directory
 cd design-system && npm run build && cd ..
 cd module-1 && npm run build && cd ..
 cd module-2 && npm run build && cd ..

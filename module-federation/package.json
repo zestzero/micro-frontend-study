@@ -1,7 +1,7 @@
 {
-  "name": "native-federation-workspace",
+  "name": "module-federation-workspace",
   "version": "1.0.0",
-  "description": "Native Federation Micro-Frontend Application",
+  "description": "Module Federation Micro-Frontend Application",
   "private": true,
   "workspaces": [
     "design-system",

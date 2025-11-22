@@ -1,6 +1,6 @@
-# Native Federation Micro-Frontend Application
+# Module Federation Micro-Frontend Application
 
-This project demonstrates a micro-frontend architecture using **Module Federation** (Native Federation) with React. It showcases best practices for building scalable, independently deployable frontend applications.
+This project demonstrates a micro-frontend architecture using **Module Federation** with React. It showcases best practices for building scalable, independently deployable frontend applications.
 
 ## 📐 Architecture Overview
 
@@ -54,7 +54,7 @@ Micro-frontend architecture is an approach to frontend development where a singl
 ## 🏗️ Project Structure
 
 ```
-native-federation/
+module-federation/
 ├── package.json                 # Root workspace configuration
 ├── README.md                    # This file
 │
@@ -166,7 +166,7 @@ new ModuleFederationPlugin({
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd micro-frontend-study/native-federation
+   cd micro-frontend-study/module-federation
    ```
 
 2. **Install dependencies for all projects**
