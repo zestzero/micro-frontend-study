@@ -2,6 +2,7 @@
   "name": "design-system",
   "version": "1.0.0",
   "description": "Shared Design System for Micro-Frontend Applications",
+  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "scripts": {

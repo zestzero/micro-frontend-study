@@ -19,12 +19,16 @@ export default {
   ],
   plugins: [
     peerDepsExternal(),
-    resolve(),
-    commonjs(),
+    resolve({
+      extensions: ['.js', '.jsx']
+    }),
     babel({
       babelHelpers: 'bundled',
       exclude: 'node_modules/**',
-      presets: ['@babel/preset-react']
-    })
-  ]
+      presets: ['@babel/preset-react'],
+      extensions: ['.js', '.jsx']
+    }),
+    commonjs()
+  ],
+  external: ['react', 'react-dom']
 };
