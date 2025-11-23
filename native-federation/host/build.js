@@ -68,22 +68,30 @@ async function build() {
   // Build federation bundles
   await federationBuilder.build();
 
-  // Copy index.html
+  // Copy index.html and inject import map
   const indexHtmlPath = path.join(__dirname, 'index.html');
   const distIndexHtmlPath = path.join(outputPath, 'index.html');
+  const importMapPath = path.join(outputPath, 'importmap.json');
   
   let indexHtml = fs.readFileSync(indexHtmlPath, 'utf-8');
-  // Update the script src to point to the built file and add polyfill
-  indexHtml = indexHtml.replace(
-    '<script type="module" crossorigin src="/src/main.tsx"></script>',
-    `<script type="esms-options">
-  {
-    "shimMode": true,
-    "mapOverrides": true
+  let importMap = '';
+  
+  // Read and inject importmap if it exists
+  if (fs.existsSync(importMapPath)) {
+    const importMapData = JSON.parse(fs.readFileSync(importMapPath, 'utf-8'));
+    // Prefix all import paths with ./
+    for (const key in importMapData.imports) {
+      if (!importMapData.imports[key].startsWith('./') && !importMapData.imports[key].startsWith('http')) {
+        importMapData.imports[key] = './' + importMapData.imports[key];
+      }
+    }
+    importMap = `<script type="importmap">\n${JSON.stringify(importMapData, null, 2)}\n</script>\n    `;
   }
-</script>
-<script src="https://ga.jspm.io/npm:es-module-shims@1.5.17/dist/es-module-shims.js"></script>
-<script type="module-shim" src="/main.js"></script>`
+  
+  // Update the script src to point to the built file and add import map
+  indexHtml = indexHtml.replace(
+    '<script type="module" src="/src/main.tsx"></script>',
+    `${importMap}<script type="module" src="/main.js"></script>`
   );
   fs.writeFileSync(distIndexHtmlPath, indexHtml);
 
